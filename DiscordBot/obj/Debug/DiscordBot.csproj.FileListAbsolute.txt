@@ -1,0 +1,1 @@
+C:\Users\Pablo\github\DiscordBot\DiscordBot\bin\Debug\DiscordBot.exe.config
