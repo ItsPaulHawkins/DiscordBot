@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace DiscordBot
 {
@@ -26,6 +27,11 @@ namespace DiscordBot
 
             // Block this task until the program is closed.
             await Task.Delay(-1);
+        }
+        public static void Sleep(int seconds)
+        {
+            seconds = seconds * 1000;
+            Thread.Sleep(seconds);
         }
 
         private async Task MessageRecieved(SocketMessage message)
@@ -54,8 +60,15 @@ namespace DiscordBot
                 if(randomNum >= 31 && randomNum <= 40)
                 {
                     await message.Channel.SendMessageAsync("\"automatic transmissions are better for gas mileage\"");
-                    await message.Channel.SendFileAsync();
+                    Sleep(2);
+                    await message.Channel.SendMessageAsync("http://imgur.com/a/d41n7");
+                    Sleep(1);
+                    await message.Channel.SendMessageAsync("auTomAtiC tRAnsmisSiOns aRe beTTer FOr gAs milEagE");
                 }
+            }
+            if(message.Content == ".adhd")
+            {
+                await message.Channel.SendMessageAsync("http://i.imgur.com/wjeVN3h.jpg");
             }
         }
         private Task Log(LogMessage msg)
