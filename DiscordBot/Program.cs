@@ -43,8 +43,7 @@ namespace DiscordBot
             if(message.Content == ".keith")
             {
                 Random rand = new Random();
-                //int randomNum = rand.Next(1, 50);
-                int randomNum = 31;
+                int randomNum = rand.Next(1, 40);
                 if (randomNum >= 1 && randomNum <= 10)
                 {
                     await message.Channel.SendMessageAsync("cars.com");
@@ -69,6 +68,29 @@ namespace DiscordBot
             if(message.Content == ".adhd")
             {
                 await message.Channel.SendMessageAsync("http://i.imgur.com/wjeVN3h.jpg");
+            }
+            if(message.Content == ".matt")
+            {
+                Random rand = new Random();
+                int matt = rand.Next(1, 40);
+                if(matt >= 1 && matt <= 10)
+                {
+                    await message.Channel.SendMessageAsync("https://s-media-cache-ak0.pinimg.com/736x/05/f9/e4/05f9e4517116bbba3859486f2e7bd7f1.jpg");
+                }
+                if(matt >= 11 && matt <= 20)
+                {
+                    await message.Channel.SendMessageAsync("the garbage collector is here");
+                    Sleep(1);
+                    await message.Channel.SendMessageAsync("http://imgur.com/a/PY8jq");
+                }
+                if (matt >= 21 && matt <= 30)
+                {
+                    await message.Channel.SendMessageAsync("MATTHEW IS MANAGER");
+                }
+                if (matt >= 31 && matt <= 40)
+                {
+                    await message.Channel.SendMessageAsync("http://imgur.com/a/rI6jT");
+                }
             }
         }
         private Task Log(LogMessage msg)
